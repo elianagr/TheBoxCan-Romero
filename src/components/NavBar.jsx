@@ -1,61 +1,83 @@
 import React from 'react'
+import CartWidget from './CartWidget';
+import logo from '../img/logo.svg';
 
 const NavBar = () => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
-  const styles = {
+  /*const styles = {
     border: 'solid red 1px',
     color: 'blue'
-  }
+  }*/
   return (
-    /* PROBANDO EJEMPLOS DE LA CLASE
-    <div>
-      <li style={styles}>Home</li>
-      <li className='w-full'>Collares</li>
-      <li>Pretales</li>
-      <li>Correas</li>
-
-    </div>*/
-    <nav className='relative flex flex-wrap items-center justify-between px-2 py-3 bg-cyan-500 mb-3'>
-      <div className='container px-4 mx-auto flex flex-wrap items-center justify-between'>
-        <div className='w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
-          <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
-                href="#theboxcan">The Box Can
+    <div class="relative bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex justify-between items-center py-6 md:justify-start md:space-x-10">
+        <div class="flex justify-start lg:w-0 lg:flex-1">
+        
+          <a href="#">
+            <span class="sr-only">The Box Can</span>
+            <img src={logo} className="App-logo" alt="logo" />
           </a>
-          <button className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-            type="button"
-            onClick={() => setNavbarOpen(!navbarOpen)}
-          >
-            <i className="fas fa-bars"></i>
-          </button>
         </div>
-        <div className={"lg:flex flex-grow items-center" + (navbarOpen ? " flex" : " hidden")}
-            id="example-navbar-danger">
-              <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-                <li className="nav-item">
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#home">
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#collares">
-                    Collares
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pretales">
-                    Pretales
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#correas">
-                    Correas
-                  </a>
-                </li>
-              </ul>
-
+      
+        <nav class="hidden md:flex space-x-10">
+          <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900"> Home </a>
+          <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900"> Collares </a>
+          <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900"> Pretales </a>
+          <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900"> Correas </a>
+        </nav>
+        <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+        <CartWidget />
         </div>
       </div>
-    </nav>
+    </div>
+
+    <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+      <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+        <div class="pt-5 pb-6 px-5">
+          <div class="flex items-center justify-between">
+            <div>
+              <img class="h-12 w-auto" src={logo} alt="The Box Can Logo" />
+            </div>
+            <div class="-mr-2">
+              <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                <span class="sr-only">Close menu</span>
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="mt-6">
+            <nav class="grid gap-y-8">
+              <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                <svg class="flex-shrink-0 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                </svg>
+                  <span class="ml-3 text-base font-medium text-gray-900"> Home </span>
+              </a>
+
+              <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                <span class="ml-3 text-base font-medium text-gray-900"> Collares </span>
+              </a>
+
+              <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                <span class="ml-3 text-base font-medium text-gray-900"> Pretales </span>
+              </a>
+
+              <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                <span class="ml-3 text-base font-medium text-gray-900"> Correas </span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+
   )
 }
 
