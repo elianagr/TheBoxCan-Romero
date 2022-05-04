@@ -19,9 +19,9 @@ const NavBar = () => {
             <nav className="hidden md:flex space-x-10">
               <ul className="flex">
                 <li className="mr-8 md:border-none text-lg font-medium text-gray-500 hover:text-gray-900"><Link to='/'>Home</Link></li>
-                <li className="mr-8 text-lg font-medium text-gray-500 hover:text-gray-900"><Link to='/collares'>Collares</Link></li>
-                <li className="mr-8 text-lg font-medium text-gray-500 hover:text-gray-900"><Link to='/pretales'>Pretales</Link></li>
-                <li className="mr-8 text-lg font-medium text-gray-500 hover:text-gray-900"><Link to='/correas'>Correas</Link></li>
+                <li className="mr-8 text-lg font-medium text-gray-500 hover:text-gray-900"><Link to='/categoria/collares'>Collares</Link></li>
+                <li className="mr-8 text-lg font-medium text-gray-500 hover:text-gray-900"><Link to='/categoria/pretales'>Pretales</Link></li>
+                <li className="mr-8 text-lg font-medium text-gray-500 hover:text-gray-900"><Link to='/categoria/correas'>Correas</Link></li>
               </ul>
             </nav>
 

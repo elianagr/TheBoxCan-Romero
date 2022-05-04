@@ -1,3 +1,12 @@
+# Proyecto The Box Can
+Este es un proyecto echo en React JS para el curso de CoderHouse por Eliana Romero.
+
+The Box Can es una Tienda Virtual para Mascotas. Diseño creado cuando hice la carrera, en la materia de UX/UI.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

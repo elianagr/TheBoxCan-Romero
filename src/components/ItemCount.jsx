@@ -5,9 +5,6 @@ const ItemCount = () => {
     const [count, setCount] = useState(1)
 
     useEffect( () => {
-    } , [])
-
-    useEffect( () => {
     } , [count])
 
     const addHandler = () => {

@@ -1,29 +1,24 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { getItem } from '../data/productsData'
 import ItemDetail from './ItemDetail'
 
 const ItemDetailContainer = () => {
 
-  const [itemDetail, setItemDetail] = useState([])
+  const [item, setItem] = useState({})
+  const {id} = useParams()
 
   useEffect(() => {
-    getItemDetail()
-  }, [])
-
-  const getItemDetail = () => {
-    const URL = 'https://swapi.dev/api/starships'
-    console.log(URL)
-      fetch(URL)
-        .then(res => {
-            return res.json()
-        })
-        .then(data=> {
-          setItemDetail(data.results)
-        })
-  }
+    if (id == undefined) {
+      getItem().then((res) => setItem(res))
+    } else {
+      getItem().then((res) => setItem(res[id]))
+    }
+  }, [id])
 
   return (
     <div>
-      {itemDetail.map(i => <li><ItemDetail key={i.url} starship={i}/></li>)}
+      <ItemDetail item= {item} />
     </div>
   )
 }
