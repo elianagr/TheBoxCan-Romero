@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const ItemCount = () => {
+const ItemCount = ({stock, onAdd}) => {
 
     const [count, setCount] = useState(1)
 
@@ -8,11 +8,13 @@ const ItemCount = () => {
     } , [count])
 
     const addHandler = () => {
-        setCount(count + 1)
+        if (count < stock) {
+            setCount(count + 1)
+        }
     }
 
     const removeHandler = () => {
-        if (count > 1) {
+        if (count > 0) {
             setCount(count - 1)
         }
     }
@@ -31,6 +33,8 @@ const ItemCount = () => {
             <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white white:bg-gray-900 rounded-md group-hover:bg-opacity-75">+
             </span>     
         </button>
+
+        <button onClick={() => onAdd (count)} className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Agregar</button>
     </div>
 
     

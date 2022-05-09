@@ -6,10 +6,10 @@ const Footer = () => {
     }
   return (
     <>
-        <footer class="bg-gray-200 text-center lg:text-left">
-  <div class="text-gray-700 text-center p-4" style= {style}>
+        <footer className="bg-gray-200 text-center lg:text-left">
+  <div className="text-gray-700 text-center p-4" style= {style}>
     © 2022
-    <a class="text-gray-800" href="https://coderhouse.com/"> Página armada con React Js por Eliana Romero.</a>
+    <a className="text-gray-800" href="https://coderhouse.com/"> Página armada con React Js por Eliana Romero.</a>
   </div>
 </footer>
     </>

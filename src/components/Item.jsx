@@ -7,7 +7,7 @@ const Item = ({ product }) => {
   return (
     <>
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
-          <a href="#" className="group">
+          <a href="" className="group">
               <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                 <img className="w-full h-full object-center object-cover group-hover:opacity-75" src={imgItem} alt={altItem} />
               </div>

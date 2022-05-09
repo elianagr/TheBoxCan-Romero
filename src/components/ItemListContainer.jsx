@@ -15,12 +15,7 @@ const ItemListContainer = () => {
       getItem().then((res) =>
       setCategoria(res.filter((p) => p.categoria == categoriaId))
       )}
-  }, [categoriaId])
-
-  /*useEffect(() => {
-    setCategoria (productsData.filter(p => p.categoria == categoriaId))
-  }, [categoriaId])*/
-  
+  }, [categoriaId])  
 
   return (
     <div className="bg-white">

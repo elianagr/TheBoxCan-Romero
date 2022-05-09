@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { productsData } from '../data/productsData'
 import CartWidget from './CartWidget'
 import ItemCount from './ItemCount'
@@ -9,9 +9,16 @@ const ItemDetail = (  ) => {
   const { itemId } = useParams()
   const [item, setItem] = useState({})
 
+  const [finalizar, setFinalizar] = useState(false)
+
   useEffect(() => {
     setItem ( productsData.find( i => i.id == itemId))
   }, [itemId])
+
+  const onAdd = (count) => {
+    setFinalizar(true)
+    console.log(count);
+  }
   
 
   return (
@@ -35,11 +42,12 @@ const ItemDetail = (  ) => {
                   <p className="mt-3 text-3xl text-gray-900">${item.precio}</p>
 
                   <div className='mt-6'>
-                  <ItemCount/>
-                  </div>
-
-                  <div className='mt-6 hidden md:flex items-center justify-start md:flex-1 lg:w-0'>
-                    <CartWidget/>
+                    {finalizar ?
+                        <Link to="/carrito"className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Producto Agregado!</Link>
+                        : (
+                          <ItemCount stock={item.stock} onAdd={onAdd}/>
+                        )
+                    }
                   </div>
               </div>
           </div>
