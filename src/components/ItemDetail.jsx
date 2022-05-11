@@ -43,9 +43,9 @@ const ItemDetail = (  ) => {
 
                   <div className='mt-6'>
                     {finalizar ?
-                        <Link to="/carrito"className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Producto Agregado!</Link>
+                        <Link to="/carrito" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Producto Agregado!</Link>
                         : (
-                          <ItemCount stock={item.stock} onAdd={onAdd}/>
+                          <ItemCount stock={item.stock} onAdd={onAdd} id={item.id} />
                         )
                     }
                   </div>

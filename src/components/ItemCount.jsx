@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react'
+import { useAppContext } from './context/AppContext'
+import { useCartContext } from './context/CartContext'
 
-const ItemCount = ({stock, onAdd}) => {
+const ItemCount = ({stock, onAdd, id}) => {
 
     const [count, setCount] = useState(1)
+
+    const {addToCart} = useCartContext()
+    const {item} = useAppContext()
 
     useEffect( () => {
     } , [count])
@@ -17,6 +22,18 @@ const ItemCount = ({stock, onAdd}) => {
         if (count > 0) {
             setCount(count - 1)
         }
+    }
+
+    const clickHandler = (id, cantidad) => {
+        const findItem = item.find((item) => item.id === id)
+
+        if(!findItem) {
+            alert("Error")
+            return
+        }
+
+        addToCart(findItem, cantidad)
+        onAdd(count)
     }
 
 
@@ -34,7 +51,7 @@ const ItemCount = ({stock, onAdd}) => {
             </span>     
         </button>
 
-        <button onClick={() => onAdd (count)} className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Agregar</button>
+        <button onClick={() => clickHandler(id, count) }  className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Agregar</button>
     </div>
 
     

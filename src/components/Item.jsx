@@ -4,6 +4,7 @@ import ItemCount from "./ItemCount"
 
 const Item = ({ product }) => {
   const {id, nombre, precio, imgItem, altItem} = product
+  
   return (
     <>
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
