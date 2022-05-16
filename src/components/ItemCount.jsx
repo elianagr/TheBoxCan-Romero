@@ -25,7 +25,7 @@ const ItemCount = ({stock, onAdd, id}) => {
     }
 
     const clickHandler = (id, cantidad) => {
-        const findItem = item.find((item) => item.id === id)
+        const findItem = item.find((item) => item.id == id)
 
         if(!findItem) {
             alert("Error")

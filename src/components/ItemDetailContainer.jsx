@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
   const {id} = useParams()
 
   useEffect(() => {
-    if (id == undefined) {
+    if (id === undefined) {
       getItem().then((res) => setItem(res))
     } else {
       getItem().then((res) => setItem(res[id]))

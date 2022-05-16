@@ -1,16 +1,15 @@
-import { useContext } from "react"
-import { CartContext } from "./context/CartContext"
+import CartList from "./CartList"
+import { useCartContext } from "./context/CartContext"
 
 const Cart = () => {
-  const {cart} = useContext(CartContext)
+  const {cart} = useCartContext()
+
+  console.log(cart)
   
 
   return (
-    <div>
-        <h1>Mi Carrito</h1>
-        <strong>CartContext: 
-        {cart.map(c => <li> {c} </li>)}
-        </strong>
+    <div className="py-12 bg-white">
+        <CartList/>
     </div>
      
   )
