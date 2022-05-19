@@ -3,6 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCljJAenTkzdpDSrzrtdmd3Ek2aPlLrF3A",
+  authDomain: "theboxcan.firebaseapp.com",
+  projectId: "theboxcan",
+  storageBucket: "theboxcan.appspot.com",
+  messagingSenderId: "346486090846",
+  appId: "1:346486090846:web:d434bbec0d15c6cf3b58cf"
+};
+
+const app = initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <React.StrictMode>

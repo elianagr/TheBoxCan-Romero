@@ -45,9 +45,10 @@ const CartProvider = ({children}) => {
         const itemEnCart = enCart(item.id)
 
         if(!itemEnCart) {
-            const deleteItem = newCart.filter(i => i.id == i.id)
-            setCart(deleteItem)
+            return
         }
+        const deleteItem = newCart.filter(i => i.id !== i.id)
+            setCart(deleteItem)
          
     }
 
