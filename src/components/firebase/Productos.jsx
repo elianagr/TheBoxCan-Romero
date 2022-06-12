@@ -38,9 +38,8 @@ const Productos = () => {
     
   return (
     <>
-        <div>Productos</div>
         <ItemList producto= {producto} categoria= {categoriaId}/>
-      </>
+    </>
   )
 }
 

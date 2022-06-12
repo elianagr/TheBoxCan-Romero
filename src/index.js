@@ -11,6 +11,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
+  /* apiKey: "AIzaSyCljJAenTkzdpDSrzrtdmd3Ek2aPlLrF3A",
+  authDomain: "theboxcan.firebaseapp.com",
+  projectId: "theboxcan",
+  storageBucket: "theboxcan.appspot.com",
+  messagingSenderId: "346486090846",
+  appId: "1:346486090846:web:d434bbec0d15c6cf3b58cf" */
   apiKey: process.env.REACT_APP_APIKEY,
   authDomain: process.env.REACT_APP_AUTHDOMAIN,
   projectId: process.env.REACT_APP_PROJECTID,
@@ -21,7 +27,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-console.log(firebaseConfig)
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

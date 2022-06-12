@@ -17,7 +17,7 @@ const ItemDetail = ({producto}) => {
       <section className='text-gray-600 body-font overflow-hidden'>
         <div className='container px-5 py-24 mx-auto'>
           <div className='lg:w-4/5 mx-auto flex flex-wrap'>
-            <img src={imgItem} alt={altItem} className='lg:w-1/3 w-full lg:h-auto h-60 object-cover object-center rounded' />
+            <img src={imgItem} alt={altItem} className='lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded' />
             <div className='lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-10 lg:mt-20'>
                 <h1 className='text-gray-900 text-5xl title-font font-medium mb-5'>{nombre}</h1>
                 <p className='leading-relaxed mb-5'>{descripcion}</p>
