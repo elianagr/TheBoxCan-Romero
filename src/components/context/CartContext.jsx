@@ -4,72 +4,84 @@ export const CartContext = createContext({
     cart: [],
 })
 
-export const useCartContext = () => {
-    return useContext (CartContext)
-}
+export const useCartContext = () => useContext (CartContext)
 
-const CartProvider = ({children}) => {
+const CartContextProvider = ({children}) => {
 
     const [cart, setCart] = useState([])
 
-    //Cantidad
-    const quantity = () => cart.reduce((sum, item) => {
-        return sum + (item.quantity)
-    }, 0)
-
-    //suma total
-    const total = () => cart.reduce((sum, item) => {
-        return sum + (item.quantity * item.precio)
-    }, 0)
-
-    //En cart?
-    const enCart = (id) => cart.find((item) => item.id == id)
+    //Está en carrito?
+    const enCarrito = (id) => cart.find((producto) => producto.id == id)
 
     //Agregar al Cart
-    const addToCart = (item, cantidad) => {
+    const addToCarrito = (producto, cantidad) => {
         const newCart = [...cart]
-        const itemEnCart = enCart(item.id)
-        if (itemEnCart) {
-            newCart[newCart.findIndex(i => i.id == itemEnCart.id)].quantity += cantidad
+        const productoEnCarrito = enCarrito(producto.id)
+
+        if (productoEnCarrito) {
+            newCart[newCart.findIndex(prod => prod.id !== productoEnCarrito.id)].quantity += cantidad
 
             setCart(newCart)
             return
+        } else {
+            producto.quantity = cantidad
+            setCart([...newCart, producto])
         }
-        item.quantity = cantidad
-        setCart([...newCart, item])
     }
 
-    //Eliminar item del cart
-    const deleteFromCart = (item) => {
-        const newCart = [...cart]
-        const itemEnCart = enCart(item.id)
-
-        if(!itemEnCart) {
-            return
-        }
-        const deleteItem = newCart.filter(i => i.id !== i.id)
-            setCart(deleteItem)
-         
+    //Eliminar un producto del carrito
+    const deleteFromCart = (id) => {
+        setCart (cart.filter((producto) => producto.id !== id))
     }
 
-    //Vaciar lista de cart
+    //Vaciar lista de carrito
     const deleteCart = () => setCart([])
+
+    //cantidad de items agregados
+    const carritoLenght = () => {
+        let quantity = 0
+        cart.forEach((producto) => {
+            quantity = quantity + producto.quantity
+        })
+        return quantity
+    }
+
+    //Cantidad
+     const quantity = () => cart.reduce((sum, item) => {
+        return sum + (item.quantity)
+    }, 0)
+
+    //subtotal
+    const subTotal = (precio, quantity) => {
+        let subtotal = 0
+        subtotal = subtotal + (precio * quantity)
+        return Number(subtotal)
+    }
+
+    //suma total
+     const total = () => cart.reduce((suma, producto) => {
+        return suma + (producto.quantity * producto.precio)
+    }, 0)
+    
 
     const context = {
         cart,
-        addToCart,
+        enCarrito,
+        addToCarrito,
         deleteFromCart,
         deleteCart,
         setCart,
-        total,
-        quantity
+        quantity,
+        subTotal,
+        carritoLenght,
+        total
     }
 
     return (
-        <CartContext.Provider value={ context}>
+        <CartContext.Provider value={context}>
             {children}
         </CartContext.Provider>
     )
 }
 
-export default CartProvider
+export default CartContextProvider
