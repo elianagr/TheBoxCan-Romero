@@ -100,68 +100,6 @@ const Checkout = () => {
                 }
             </div>
         </div>
-    
-
-    {/* <div className="h-screen lg:w-4/5 sm:full grid grid-cols-3">
-        <div className="lg:col-span-2 col-span-3 bg-gray-100 space-y-8 px-16 ml-20 mr-20">
-            <div className="mt-8 p-4 relative flex flex-col sm:flex-row sm:items-center bg-white shadow rounded-md">
-                <div className="flex flex-row items-center border-b sm:border-b-0 w-full sm:w-auto pb-4 sm:pb-0">
-                    <div className="text-blue-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 sm:w-5 h-6 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <div className="text-sm font-medium ml-3">Checkout</div>
-                </div>
-                <div className="text-sm tracking-wide text-gray-500 mt-4 sm:mt-0 sm:ml-4">Completá con tus datos personales para poder continuar.</div>
-            </div>
-            <div className="rounded-md">
-                <form id="payment-form" method="POST" action="">
-                    <section>
-                        <h2 className="uppercase tracking-wide text-lg font-semibold text-gray-700 my-2">Información Personal</h2>
-                        <fieldset className="mb-3 bg-white shadow-lg rounded text-gray-600">
-                            <label className="flex border-b border-gray-200 h-12 py-3 items-center">
-                                <span className="text-right px-2">Nombre</span>
-                                <input id="name" name="name" type="text" className="focus:outline-none px-3" placeholder="Nombre" required onChange={handleSubmitChange} />
-                            </label>
-                            <label className="flex border-b border-gray-200 h-12 py-3 items-center">
-                                <span className="text-right px-2">Apellido</span>
-                                <input id="surname" name="surname" type="text" className="focus:outline-none px-3" placeholder="Apellido" required onChange={handleSubmitChange} />
-                            </label>
-                            <label className="flex border-b border-gray-200 h-12 py-3 items-center">
-                                <span className="text-right px-2">Email</span>
-                                <input id="email" name="email" type="email" className="focus:outline-none px-3" placeholder="ejemplo@ejemplo.com" required onChange={handleSubmitChange} />
-                            </label>
-                            <label className="flex border-b border-gray-200 h-12 py-3 items-center">
-                                <span className="text-right px-2">Teléfono</span>
-                                <input id="phone" name="phone" type="phone" className="focus:outline-none px-3" placeholder="11 2345 6789" required  onChange={handleSubmitChange} />
-                            </label>
-                            <label className="flex border-b border-gray-200 h-12 py-3 items-center">
-                                <span className="text-right px-2">Dirección</span>
-                                <input id="adress" type="text" name="adress" className="focus:outline-none px-3" placeholder="Dirección" required onChange={handleSubmitChange} />
-                            </label>
-                        </fieldset>
-                    </section>
-                </form>
-            </div>   
-        </div>
-
-        <div className="lg:col-span-1 col-span-3 bg-white">
-            <h1 className="py-6 border-b-2 text-xl text-gray-600 px-8">Orden de Compra</h1>
-                <ul className="py-6 border-b space-y-6 px-8">
-                    { cart.map(item => <CheckoutContainer key={item.id} producto={item} /> )}
-                </ul>
-                <CheckoutTotal />
-
-                {user.name && user.surname && user.phone && user.email && user.adress
-                ? (
-                    <button onClick={() => { orderHandler(); setModal(true) }} className="submit-button px-4 py-3 rounded-full bg-blue-400 mt-5 sm:mb-32 text-white focus:ring focus:outline-none w-full text-xl font-semibold transition-colors" type="button" data-modal-toggle="popup-modal">Pagar ${total()}
-                    </button>
-                ) : (
-                    <input className="submit-button px-4 py-3 rounded-full bg-gray-400 text-white focus:ring focus:outline-none w-full text-xl font-semibold transition-colors sm:mb-32" type="submit" value="Completá los datos" disabled />
-                )
-                }
-        </div> */}
         
         {/*Modal */}
         <div id="popup-modal" tabIndex="-1" className={`${modal ? "flex" : "hidden"} overflow-y-auto overflow-x-hidden bg-gray-900 bg-opacity-60 fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full justify-center items-center h-screen lg:w-full sm:full`}>
@@ -186,8 +124,6 @@ const Checkout = () => {
             </div>
         </div>
     </section>
-
-    {/* </div> */}
     </>
   )
 }
