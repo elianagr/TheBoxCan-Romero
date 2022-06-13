@@ -4,7 +4,7 @@ Este es un proyecto echo en React JS para el curso de CoderHouse por Eliana Rome
 The Box Can es una Tienda Virtual para Mascotas. Diseño creado cuando hice la carrera, en la materia de UX/UI.
 
 Podés ver el proyecto en funcionamiento en este enlace:
-[enlace]
+https://the-box-can.vercel.app/
 
 
 ## Datos

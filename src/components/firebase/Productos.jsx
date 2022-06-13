@@ -22,19 +22,6 @@ const Productos = () => {
         }
         getItem()
     }, [categoriaId, setProducto])
-
-    /* useEffect(() => {
-        const db = getFirestore()
-        const items = collection(db, 'items')
-        getDocs(items).then(snapshot => {
-            const productosLista = []
-            snapshot.docs.forEach(s => {
-                productosLista.push({id: s.id, ...s.data()})
-            })
-            console.log(productosLista)
-            setProductos(productosLista)
-        })
-    }, []) */
     
   return (
     <>
